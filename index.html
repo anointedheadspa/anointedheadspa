@@ -1,14 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anointed Headspa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Anointed Headspa | Luxury Scalp & Relaxation Experience</title>
+
+  <meta
+    name="description"
+    content="Anointed Headspa offers a relaxing, luxurious head spa experience focused on scalp care, wellness, and restoration."
+  />
+
+  <style>
+    :root {
+      --purple-dark: #24112f;
+      --purple: #4b245f;
+      --purple-light: #704080;
+
+      --pink-dark: #9d3e62;
+      --pink: #c85f7e;
+      --pink-light: #e7a8b7;
+
+      --cream: #fff8f2;
+      --cream-dark: #f3e5dc;
+
+      --gold: #caa66a;
+      --gold-light: #e0c18b;
+
+      --text: #2c2130;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top right, rgba(200, 95, 126, 0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(112, 64, 128, 0.12), transparent 30%),
+        var(--cream);
+
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(36, 17, 47, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 1.55rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
+    .brand span {
+      color: var(--gold-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #f9edf8;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-book {
+      padding: 11px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: var(--gold-light) !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(36, 17, 47, 0.72),
+          rgba(36, 17, 47, 0.82)
+        ),
+        radial-gradient(circle at 20% 20%, #7c4a88, transparent 45%),
+        radial-gradient(circle at 80% 30%, #b84c74, transparent 35%),
+        linear-gradient(135deg, #3d1c4c, #25132e 65%);
+    }
+
+    .hero::before {
+      content: "✦";
+      position: absolute;
+      top: 13%;
+      left: 8%;
+      font-size: 2rem;
+      color: var(--gold-light);
+      opacity: 0.9;
+    }
+
+    .hero::after {
+      content: "☾";
+      position: absolute;
+      right: 9%;
+      bottom: 12%;
+      font-size: 4rem;
+      color: var(--gold-light);
+      opacity: 0.35;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 850px;
+      padding: 100px 0;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      line-height: 0.95;
+      margin-bottom: 25px;
+      font-weight: normal;
+    }
+
+    .hero h1 span {
+      color: var(--pink-light);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 35px;
+      font-size: 1.18rem;
+      color: #f3eaf3;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    .button-primary {
+      background: var(--pink);
+      color: var(--white);
+      border: 1px solid var(--pink);
+    }
+
+    .button-primary:hover {
+      background: var(--pink-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+
+    .button-secondary:hover {
+      background: rgba(202, 166, 106, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 55px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--pink-dark);
+    }
+
+    .section-title h2 {
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      color: var(--purple-dark);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      color: #695a6c;
+      font-size: 1.05rem;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 500px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,.35), transparent 25%),
+        linear-gradient(145deg, var(--pink-dark), var(--purple));
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(57, 23, 69, 0.22);
+    }
+
+    .about-visual::before {
+      content: "☾";
+      position: absolute;
+      font-size: 10rem;
+      right: 12%;
+      top: 10%;
+      color: rgba(255,255,255,0.12);
+    }
+
+    .about-visual::after {
+      content: "✦";
+      position: absolute;
+      font-size: 6rem;
+      left: 14%;
+      bottom: 12%;
+      color: rgba(224,193,139,0.6);
+    }
+
+    .about-copy h3 {
+      font-size: 2.5rem;
+      color: var(--purple-dark);
+      margin-bottom: 22px;
+      font-weight: normal;
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+      color: #625668;
+      font-size: 1.04rem;
+    }
+
+    .signature {
+      margin-top: 28px;
+      color: var(--pink-dark);
+      font-style: italic;
+      font-size: 1.3rem;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #f8ede9;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 35px;
+      border: 1px solid rgba(76, 36, 95, 0.08);
+      box-shadow: 0 15px 35px rgba(47, 24, 57, 0.07);
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 45px rgba(47, 24, 57, 0.12);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(200, 95, 126, 0.12);
+      color: var(--pink-dark);
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.55rem;
+      color: var(--purple-dark);
+      margin-bottom: 14px;
+    }
+
+    .service-card p {
+      color: #746779;
+      margin-bottom: 20px;
+    }
+
+    .service-card .coming-soon {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--pink-dark);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* BENEFITS */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .benefit {
+      padding: 25px 15px;
+    }
+
+    .benefit-symbol {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .benefit h4 {
+      color: var(--purple-dark);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .benefit p {
+      color: #6c6071;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      background:
+        linear-gradient(
+          rgba(36, 17, 47, 0.94),
+          rgba(36, 17, 47, 0.94)
+        ),
+        linear-gradient(135deg, var(--purple-dark), var(--pink-dark));
+
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 32px;
+      color: #eee1ef;
+      font-size: 1.05rem;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      padding: 38px;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(49, 26, 57, 0.08);
+    }
+
+    .contact-card h3 {
+      font-size: 1.8rem;
+      color: var(--purple-dark);
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin-bottom: 16px;
+    }
+
+    .contact-label {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--pink-dark);
+      margin-bottom: 3px;
+    }
+
+    .contact-value {
+      color: var(--purple-dark);
+      font-size: 1.05rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #170b1d;
+      color: #d9cddd;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer .brand {
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #ad9db1;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-visual {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 82vh;
+      }
+
+      .hero-content {
+        padding: 75px 0;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Anointed Headspa</h1>
-  <p>Something beautiful is coming.</p>
-  <p>Contact: maci@anointedheadspa.com</p>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="brand">
+          Anointed <span>Headspa</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-book">Book Soon</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Rest • Restore • Renew
+        </div>
+
+        <h1>
+          Anointed <span>Headspa</span>
+        </h1>
+
+        <p>
+          A luxurious head spa experience designed to nourish the scalp,
+          calm the mind, and create space for true relaxation.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="button button-primary">
+            Booking Coming Soon
+          </a>
+
+          <a href="#services" class="button button-secondary">
+            Explore the Experience
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual"></div>
+
+        <div class="about-copy">
+
+          <div class="eyebrow">
+            Welcome to Anointed
+          </div>
+
+          <h3>
+            More than a treatment.
+            A moment to completely reset.
+          </h3>
+
+          <p>
+            Anointed Headspa is being created as a place where scalp care,
+            relaxation, beauty, and wellness come together in one immersive
+            experience.
+          </p>
+
+          <p>
+            Every detail is designed to help you slow down, disconnect from
+            the outside world, and leave feeling restored.
+          </p>
+
+          <p>
+            From soothing scalp treatments to relaxing massage and carefully
+            selected products, the goal is simple: create an experience that
+            feels both indulgent and restorative.
+          </p>
+
+          <div class="signature">
+            — Maci
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="eyebrow">The Experience</div>
+
+        <h2>
+          Rituals designed for relaxation and renewal
+        </h2>
+
+        <p>
+          Full service details and pricing will be added as the treatment menu
+          is finalized.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+
+          <h3>Signature Head Spa</h3>
+
+          <p>
+            A relaxing scalp-focused experience designed to cleanse, nourish,
+            massage, and restore.
+          </p>
+
+          <div class="coming-soon">
+            Details Coming Soon
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☾</div>
+
+          <h3>Scalp Wellness</h3>
+
+          <p>
+            Thoughtful treatments focused on scalp comfort, cleansing,
+            hydration, and overall scalp wellness.
+          </p>
+
+          <div class="coming-soon">
+            Details Coming Soon
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✿</div>
+
+          <h3>Luxury Add-Ons</h3>
+
+          <p>
+            Additional relaxation and self-care options will be available to
+            personalize your visit.
+          </p>
+
+          <div class="coming-soon">
+            Details Coming Soon
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="eyebrow">Why Head Spa?</div>
+
+        <h2>
+          Care for your scalp. Space for your mind.
+        </h2>
+      </div>
+
+      <div class="benefits-grid">
+
+        <div class="benefit">
+          <div class="benefit-symbol">✦</div>
+          <h4>Scalp Care</h4>
+          <p>
+            Treatments centered around cleansing, hydration, and scalp comfort.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-symbol">☾</div>
+          <h4>Deep Relaxation</h4>
+          <p>
+            A peaceful environment created to help quiet the mind and reduce stress.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-symbol">✿</div>
+          <h4>Intentional Self-Care</h4>
+          <p>
+            Time set aside specifically for restoration, comfort, and wellbeing.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-symbol">✧</div>
+          <h4>Personalized Experience</h4>
+          <p>
+            Services and add-ons designed to make each visit feel uniquely yours.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <div class="eyebrow">
+        Your ritual awaits
+      </div>
+
+      <h2>
+        Something beautiful is taking shape.
+      </h2>
+
+      <p>
+        Anointed Headspa is currently preparing for launch.
+        Follow along as services, booking, and opening information become available.
+      </p>
+
+      <a href="mailto:maci@anointedheadspa.com"
+         class="button button-primary">
+        Contact Maci
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <div class="eyebrow">Stay Connected</div>
+
+        <h2>
+          Be among the first to experience Anointed Headspa
+        </h2>
+
+        <p>
+          Booking information and opening details will be added soon.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Contact</h3>
+
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+
+            <a
+              href="mailto:maci@anointedheadspa.com"
+              class="contact-value"
+            >
+              maci@anointedheadspa.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Coming Soon</h3>
+
+          <div class="contact-item">
+            <span class="contact-label">Online Booking</span>
+            <div class="contact-value">
+              Launching soon
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Service Menu</span>
+            <div class="contact-value">
+              Pricing and treatments coming soon
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Social Media</span>
+            <div class="contact-value">
+              Links coming soon
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="brand">
+        Anointed <span>Headspa</span>
+      </div>
+
+      <p>
+        © 2026 Anointed Headspa. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
 </body>
 </html>
