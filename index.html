@@ -546,9 +546,59 @@
       }
     }
   </style>
-</head>
+<style>
+/* Celestial garden preview — presentation only, existing content retained. */
+:root{--purple-dark:#2f193d;--purple:#583567;--pink:#9b4169;--pink-light:#ecc6db;--cream:#fcf7ef;--gold:#b59857;--gold-light:#e3cb8f}
+body{background:var(--cream);font-family:Georgia,serif}
+.container{width:min(1240px,88%)}
+header{background:#fcf7ef;backdrop-filter:none;border-bottom:1px solid #dfd2c5}
+nav{min-height:92px}.brand{color:#392342;font-weight:normal;letter-spacing:-.035em;font-size:1.6rem}.brand span{color:#8b486c}
+.nav-links a{color:#49374f;font-family:Arial,sans-serif;font-size:.75rem;letter-spacing:.08em}.nav-links a:hover{color:#8b315b}
+.nav-book{color:#643b5d!important;border-color:#a37e5c;border-radius:2px;padding:12px 20px}
+.hero{min-height:740px;background:radial-gradient(ellipse at 80% 30%,#62406e 0%,transparent 52%),#2f193d;padding:0}
+.hero>.container{display:grid;grid-template-columns:1.08fr 1fr;align-items:center;gap:3vw}
+.hero-content{text-align:left;padding:96px 0;max-width:680px}
+.hero .eyebrow{font-size:.65rem;letter-spacing:.3em}
+.hero h1{font-size:clamp(4rem,7.1vw,7rem);line-height:.95;letter-spacing:-.055em}
+.hero h1 span{display:block;font-weight:normal;color:#efc4da}
+.hero p{font-size:1.08rem;max-width:450px;margin:30px 0 34px;line-height:1.85;color:#e2d3e5}
+.hero-buttons{justify-content:flex-start;gap:18px}
+.button{border-radius:2px;font-size:.76rem;padding:16px 23px}
+.button-primary{background:#e8bbd0;color:#36213e;border-color:#e8bbd0}
+.button-primary:hover{background:#f5d7e5;color:#36213e}
+.hero .button-secondary{border:0;border-bottom:1px solid #b59857;padding-left:0;padding-right:0}
+.hero::before,.hero::after{display:none}
+.garden-art{width:100%;max-width:520px;justify-self:center;color:#e3cb8f}
+.garden-art svg{display:block;width:100%;height:auto}
+section{scroll-margin-top:95px;padding:110px 0}
+.eyebrow{font-family:Arial,sans-serif;letter-spacing:.22em;color:#854261;font-size:.67rem}
+.about-grid{gap:9vw}
+.about-visual{min-height:440px;border-radius:220px 220px 6px 6px;background:#ead5df;box-shadow:none;border:1px solid #cfb786;display:grid;place-items:center}
+.about-visual::before,.about-visual::after{display:none}
+.about-visual .garden-art{width:78%;color:#7a4c76}
+.about-copy h3{font-size:clamp(2.4rem,4vw,3.7rem);line-height:1.12;letter-spacing:-.04em}
+.about-copy p{font-size:.99rem;line-height:1.9}.signature{font-size:1.6rem}
+.section-title{max-width:710px}.section-title h2{letter-spacing:-.04em}
+.services{background:#f0e3ea;border-top:1px solid #dfcdd8;border-bottom:1px solid #dfcdd8}
+.service-grid{gap:0;border-top:1px solid #cbb4c3;border-bottom:1px solid #cbb4c3}
+.service-card{border:0;border-right:1px solid #cbb4c3;border-radius:0;background:transparent;box-shadow:none;padding:42px 32px}.service-card:last-child{border-right:0}
+.service-card:hover{transform:none;box-shadow:none;background:#f7edf2}
+.service-icon{background:transparent;border:1px solid #b89a72;color:#714873;border-radius:50%;font-size:1.8rem}
+.service-card h3{font-size:1.7rem;font-weight:normal}.service-card p{font-size:.97rem}
+.service-card .coming-soon{font-size:.63rem;letter-spacing:.15em}
+.benefits-grid{gap:0}.benefit{border-right:1px solid #ddd0c7}.benefit:last-child{border:0}.benefit h4{font-weight:normal}
+.cta{background:#392144;padding:95px 0}.cta h2{letter-spacing:-.04em;color:#f6deeb}.cta .eyebrow{color:#e3cb8f}
+.contact-grid{gap:30px}.contact-card{border:1px solid #ded0c5;border-radius:2px;box-shadow:none;background:transparent}
+.contact-card h3{font-weight:normal}.contact-value{overflow-wrap:anywhere}
+footer{background:#281632;text-align:left;padding:35px 0}footer .container{display:flex;justify-content:space-between;align-items:center;gap:25px}footer .brand{color:#f2e8ef}
+a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
+.skip-link{position:fixed;top:-100px;left:20px;z-index:2000;background:#fff;padding:12px;color:#392144}.skip-link:focus{top:10px}
+@media(max-width:900px){nav{flex-wrap:wrap;padding:18px 0;gap:15px}.nav-links{display:flex;flex-wrap:wrap;gap:18px}.nav-links .nav-book{display:none}.hero>.container{grid-template-columns:1fr 1fr}.hero-content{padding:75px 0}.hero{min-height:650px}.hero h1{font-size:4.5rem}.hero-buttons{flex-direction:column;align-items:flex-start}.service-card{border-right:0;border-bottom:1px solid #cbb4c3}.service-card:last-child{border-bottom:0}.benefit:nth-child(2){border-right:0}footer .container{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.hero>.container{grid-template-columns:1fr}.hero-content{padding:65px 0 25px}.hero h1{font-size:clamp(3.8rem,16vw,5rem)}.garden-art{max-width:300px;margin-bottom:35px}.hero{min-height:auto}.hero p{font-size:1rem}.hero-buttons{flex-direction:row}.nav-links{gap:15px}.nav-links a{font-size:.65rem}.brand{font-size:1.45rem}section{padding:75px 0}.about-visual{min-height:350px}.about-visual .garden-art{margin:0}.about-grid{gap:40px}.benefit{border:0;border-bottom:1px solid #ddd0c7}.section-title h2{font-size:2.7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style></head>
 
-<body>
+<body><a class="skip-link" href="#home">Skip to content</a>
 
   <!-- NAVIGATION -->
   <header>
@@ -569,6 +619,7 @@
     </div>
   </header>
 
+<main>
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="container">
@@ -598,6 +649,7 @@
         </div>
 
       </div>
+<div class="garden-art" aria-hidden="true"><svg viewBox="0 0 500 610" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="glow"><stop stop-color="#c39abb" stop-opacity=".26"/><stop offset="1" stop-color="#c39abb" stop-opacity="0"/></radialGradient><g id="flower" stroke="currentColor" stroke-width="1.1"><ellipse cy="-19" rx="12" ry="22"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(72)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(144)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(216)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(288)"/><circle r="7"/></g><g id="star" fill="currentColor"><path d="M0-10 2-2 10 0 2 2 0 10-2 2-10 0-2-2Z"/></g></defs><ellipse cx="250" cy="285" rx="230" ry="280" fill="url(#glow)"/><path d="M70 522V246a180 180 0 0 1 360 0v276Z" stroke="currentColor" opacity=".55"/><path d="M84 508V246a166 166 0 0 1 332 0v262Z" stroke="currentColor" opacity=".2"/><circle cx="250" cy="256" r="108" stroke="currentColor" opacity=".35"/><path d="M290 172a89 89 0 1 0 0 168 96 96 0 0 1 0-168Z" fill="currentColor" opacity=".87"/><use href="#star" x="302" y="219"/><use href="#star" x="334" y="279" transform="translate(100 85) scale(.7)"/><use href="#star" x="202" y="112"/><use href="#star" x="384" y="159"/><use href="#star" x="117" y="330"/><g stroke="currentColor" stroke-width="1.3"><path d="M110 535q95-58 63-172M126 523q-31-54-7-90M164 478q58-14 66-56M385 535q-91-64-61-170M368 520q35-61 12-92M335 478q-59-17-66-57"/><path d="M162 459q-50-6-48-46 43 8 48 46ZM170 427q34-12 37-43-33 2-37 43ZM139 502q-47-7-49-33 35-3 49 33ZM335 456q49-8 48-46-42 9-48 46ZM328 426q-34-13-35-43 32 3 35 43ZM356 502q47-7 49-33-35-3-49 33Z"/></g><use href="#flower" x="172" y="363"/><use href="#flower" x="326" y="361"/><use href="#flower" transform="translate(112 432) scale(.65)"/><use href="#flower" transform="translate(388 429) scale(.65)"/><path d="M190 540q60 27 120 0" stroke="currentColor"/><use href="#star" x="250" y="548"/><g fill="currentColor" opacity=".6"><circle cx="120" cy="205" r="2"/><circle cx="350" cy="128" r="2"/><circle cx="362" cy="330" r="2"/><circle cx="233" cy="400" r="2"/><circle cx="293" cy="115" r="1.5"/></g></svg></div>
     </div>
   </section>
 
@@ -606,7 +658,7 @@
     <div class="container">
       <div class="about-grid">
 
-        <div class="about-visual"></div>
+        <div class="about-visual"><div class="garden-art" aria-hidden="true"><svg viewBox="0 0 500 610" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="about-glow"><stop stop-color="#c39abb" stop-opacity=".26"/><stop offset="1" stop-color="#c39abb" stop-opacity="0"/></radialGradient><g id="about-flower" stroke="currentColor" stroke-width="1.1"><ellipse cy="-19" rx="12" ry="22"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(72)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(144)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(216)"/><ellipse cy="-19" rx="12" ry="22" transform="rotate(288)"/><circle r="7"/></g><g id="about-star" fill="currentColor"><path d="M0-10 2-2 10 0 2 2 0 10-2 2-10 0-2-2Z"/></g></defs><ellipse cx="250" cy="285" rx="230" ry="280" fill="url(#about-glow)"/><path d="M70 522V246a180 180 0 0 1 360 0v276Z" stroke="currentColor" opacity=".55"/><path d="M84 508V246a166 166 0 0 1 332 0v262Z" stroke="currentColor" opacity=".2"/><circle cx="250" cy="256" r="108" stroke="currentColor" opacity=".35"/><path d="M290 172a89 89 0 1 0 0 168 96 96 0 0 1 0-168Z" fill="currentColor" opacity=".87"/><use href="#about-star" x="302" y="219"/><use href="#about-star" x="334" y="279" transform="translate(100 85) scale(.7)"/><use href="#about-star" x="202" y="112"/><use href="#about-star" x="384" y="159"/><use href="#about-star" x="117" y="330"/><g stroke="currentColor" stroke-width="1.3"><path d="M110 535q95-58 63-172M126 523q-31-54-7-90M164 478q58-14 66-56M385 535q-91-64-61-170M368 520q35-61 12-92M335 478q-59-17-66-57"/><path d="M162 459q-50-6-48-46 43 8 48 46ZM170 427q34-12 37-43-33 2-37 43ZM139 502q-47-7-49-33 35-3 49 33ZM335 456q49-8 48-46-42 9-48 46ZM328 426q-34-13-35-43 32 3 35 43ZM356 502q47-7 49-33-35-3-49 33Z"/></g><use href="#about-flower" x="172" y="363"/><use href="#about-flower" x="326" y="361"/><use href="#about-flower" transform="translate(112 432) scale(.65)"/><use href="#about-flower" transform="translate(388 429) scale(.65)"/><path d="M190 540q60 27 120 0" stroke="currentColor"/><use href="#about-star" x="250" y="548"/><g fill="currentColor" opacity=".6"><circle cx="120" cy="205" r="2"/><circle cx="350" cy="128" r="2"/><circle cx="362" cy="330" r="2"/><circle cx="233" cy="400" r="2"/><circle cx="293" cy="115" r="1.5"/></g></svg></div></div>
 
         <div class="about-copy">
 
@@ -850,6 +902,7 @@
     </div>
   </section>
 
+</main>
   <!-- FOOTER -->
   <footer>
     <div class="container">
