@@ -616,6 +616,14 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
 .nav-links .nav-book{display:inline-block}
 @media(max-width:900px){.nav-links{gap:18px;justify-content:flex-end}.services .service-card h3{min-height:0}.nav-links .nav-book{display:inline-block}}
 @media(max-width:600px){nav{gap:10px;align-items:center}.nav-links{width:100%;justify-content:space-between;gap:8px}.nav-links .nav-book{padding:9px 12px;font-size:.7rem}.nav-links a{padding:8px 0}.services .service-card{padding:32px 20px}.hero-buttons .button{min-height:48px}section{scroll-margin-top:140px}}
+</style><style>
+.booking-section #square-booking-embed{width:100%;max-width:1060px;margin:40px auto 22px;background:#fff;border:1px solid #b59857;border-radius:5px;overflow:hidden;text-align:left;color:#2f193d}
+#square-booking-embed iframe{display:block;width:100%;min-height:680px;border:0}
+.booking-section .booking-fallback{margin:20px auto 0;font-size:.85rem}
+.booking-fallback a{color:#e3cb8f;text-decoration:underline;text-underline-offset:4px}
+.price-book{font-size:.74rem;gap:10px}
+.nav-links .nav-book{white-space:nowrap}
+@media(max-width:600px){.booking-section .container{width:94%}.booking-section #square-booking-embed{margin-top:28px}.nav-links .nav-book{font-size:.66rem;padding:9px 10px}}
 </style></head>
 
 <body><a class="skip-link" href="#home">Skip to content</a>
@@ -633,7 +641,7 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
           <a href="#services">Pricing</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
-          <a href="#booking" class="nav-book">Booking</a>
+          <a href="#booking" class="nav-book">Book Appointment</a>
         </div>
       </nav>
     </div>
@@ -659,13 +667,8 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
         </p>
 
         <div class="hero-buttons">
-          <a href="#services" class="button button-primary">
-            View Services &amp; Pricing
-          </a>
-
-          <a href="#booking" class="button button-secondary">
-            Booking Information
-          </a>
+          <a href="#booking" class="button button-primary">Book an Appointment</a>
+          <a href="#services" class="button button-secondary">View Services &amp; Pricing</a>
         </div>
 
       </div>
@@ -686,21 +689,21 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
           <h3>Anointed Peace</h3>
           <p class="service-duration">1 hour</p>
           <p class="service-price">$75</p>
-          <a class="button price-book" href="#booking">Booking information <span aria-hidden="true">↗</span></a>
+          <a class="button price-book" href="#booking">Book Anointed Peace <span aria-hidden="true">↗</span></a>
         </article>
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">☾</div>
           <h3>Anointed Renewal</h3>
           <p class="service-duration">90 minutes</p>
           <p class="service-price">$100</p>
-          <a class="button price-book" href="#booking">Booking information <span aria-hidden="true">↗</span></a>
+          <a class="button price-book" href="#booking">Book Anointed Renewal <span aria-hidden="true">↗</span></a>
         </article>
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">✿</div>
           <h3>Anointed Sanctuary</h3>
           <p class="service-duration">2 hours</p>
           <p class="service-price">$135</p>
-          <a class="button price-book" href="#booking">Booking information <span aria-hidden="true">↗</span></a>
+          <a class="button price-book" href="#booking">Book Anointed Sanctuary <span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </div>
@@ -725,9 +728,7 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
           </h3>
 
           <p>
-            Anointed Headspa is being created as a place where scalp care,
-            relaxation, beauty, and wellness come together in one immersive
-            experience.
+            Anointed Headspa brings scalp care, relaxation, beauty, and wellness together in one immersive experience.
           </p>
 
           <p>
@@ -808,27 +809,30 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta" id="booking">
+  <!-- BOOKING -->
+  <section class="cta booking-section" id="booking" aria-labelledby="booking-heading">
     <div class="container">
-
-      <div class="eyebrow">
-        Your ritual awaits
+      <div class="eyebrow">Your ritual awaits</div>
+      <h2 id="booking-heading">Book your moment of calm.</h2>
+      <p>Choose a service below. Square will open in a new tab so you can select your appointment time and complete your booking.</p>
+      <div id="square-booking-embed" aria-label="Square appointment scheduler">
+        <!-- Start Square Appointments Embed Code --><script src="https://square.site/appointments/buyer/widget/6e670549-6f6f-49bc-888b-1a1ad1e70f50/758877AK4GKV1.js"></script><!-- End Square Appointments Embed Code -->
       </div>
-
-      <h2>
-        Booking information
-      </h2>
-
-      <p>
-        Online booking is coming soon. In the meantime, contact Maci with any questions about the service menu.
-      </p>
-
-      <a href="mailto:maci@anointedheadspa.com"
-         class="button button-primary">
-        Contact Maci
-      </a>
-
+      <script>
+        (() => {
+          const host = document.getElementById('square-booking-embed');
+          const labelFrame = () => {
+            const frame = host.querySelector('iframe');
+            if (frame) { frame.title = 'Book an appointment with Anointed Headspa through Square'; return true; }
+            return false;
+          };
+          if (!labelFrame()) {
+            const observer = new MutationObserver(() => { if (labelFrame()) observer.disconnect(); });
+            observer.observe(host, { childList: true });
+          }
+        })();
+      </script>
+      <p class="booking-fallback"><a href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1" target="_blank" rel="noopener noreferrer">Open booking in a separate window <span aria-hidden="true">↗</span></a></p>
     </div>
   </section>
 
@@ -840,11 +844,11 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
         <div class="eyebrow">Stay Connected</div>
 
         <h2>
-          Be among the first to experience Anointed Headspa
+          Questions before your visit?
         </h2>
 
         <p>
-          Booking information and opening details will be added soon.
+          Contact Maci with any questions about your visit.
         </p>
       </div>
 
@@ -866,12 +870,12 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
         </div>
 
         <div class="contact-card">
-          <h3>Coming Soon</h3>
+          <h3>Plan your visit</h3>
 
           <div class="contact-item">
             <span class="contact-label">Online Booking</span>
             <div class="contact-value">
-              Launching soon
+              <a href="#booking">Book an appointment</a>
             </div>
           </div>
 
@@ -882,12 +886,7 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
             </div>
           </div>
 
-          <div class="contact-item">
-            <span class="contact-label">Social Media</span>
-            <div class="contact-value">
-              Links coming soon
-            </div>
-          </div>
+
         </div>
 
       </div>
