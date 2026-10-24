@@ -624,6 +624,16 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
 .price-book{font-size:.74rem;gap:10px}
 .nav-links .nav-book{white-space:nowrap}
 @media(max-width:600px){.booking-section .container{width:94%}.booking-section #square-booking-embed{margin-top:28px}.nav-links .nav-book{font-size:.66rem;padding:9px 10px}}
+</style><style>
+/* Clear, consistent client policy before booking. */
+.booking-policy-header{margin:0;padding:0 0 13px;color:#643b5d;text-align:right;font: .78rem/1.5 Arial,Helvetica,sans-serif}
+.booking-policy-header strong{font-weight:600}
+.services .service-card .client-policy{margin:0 0 12px;font:.78rem/1.5 Arial,Helvetica,sans-serif;color:#643b5d}
+.booking-section .booking-client-policy{max-width:1060px;margin:26px auto 0;color:#f6deeb;font:.9rem/1.6 Arial,Helvetica,sans-serif}
+.booking-section #square-booking-embed{margin-top:20px}
+section{scroll-margin-top:140px}
+@media(max-width:900px){section{scroll-margin-top:185px}.booking-policy-header{text-align:left;padding-bottom:12px}}
+@media(max-width:600px){section{scroll-margin-top:190px}.booking-policy-header{font-size:.74rem}.booking-section .booking-client-policy{padding:0 10px}}
 </style></head>
 
 <body><a class="skip-link" href="#home">Skip to content</a>
@@ -644,6 +654,7 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
           <a href="#booking" class="nav-book">Book Appointment</a>
         </div>
       </nav>
+      <p class="booking-policy-header" id="client-policy"><strong>Booking policy:</strong> Male clients are not accepted.</p>
     </div>
   </header>
 
@@ -715,21 +726,24 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
           <h3>Anointed Peace</h3>
           <p class="service-duration">1 hour</p>
           <p class="service-price">$75</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/UD3CSVYJQ2IFST6KHC34TMRA" target="_blank" rel="noopener noreferrer">Book Anointed Peace <span aria-hidden="true">↗</span></a>
+          <p class="client-policy" id="peace-policy">Male clients are not accepted.</p>
+          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/UD3CSVYJQ2IFST6KHC34TMRA" target="_blank" rel="noopener noreferrer" aria-describedby="peace-policy">Book Anointed Peace <span aria-hidden="true">↗</span></a>
         </article>
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">☾</div>
           <h3>Anointed Renewal</h3>
           <p class="service-duration">90 minutes</p>
           <p class="service-price">$100</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/PTZFJO7PYRCVRXCWOKRRYM5P" target="_blank" rel="noopener noreferrer">Book Anointed Renewal <span aria-hidden="true">↗</span></a>
+          <p class="client-policy" id="renewal-policy">Male clients are not accepted.</p>
+          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/PTZFJO7PYRCVRXCWOKRRYM5P" target="_blank" rel="noopener noreferrer" aria-describedby="renewal-policy">Book Anointed Renewal <span aria-hidden="true">↗</span></a>
         </article>
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">✿</div>
           <h3>Anointed Sanctuary</h3>
           <p class="service-duration">2 hours</p>
           <p class="service-price">$135</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/GMDSXPBJDMWSCCEOOSRZSFOA" target="_blank" rel="noopener noreferrer">Book Anointed Sanctuary <span aria-hidden="true">↗</span></a>
+          <p class="client-policy" id="sanctuary-policy">Male clients are not accepted.</p>
+          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/GMDSXPBJDMWSCCEOOSRZSFOA" target="_blank" rel="noopener noreferrer" aria-describedby="sanctuary-policy">Book Anointed Sanctuary <span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </div>
@@ -841,7 +855,8 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
       <div class="eyebrow">Your ritual awaits</div>
       <h2 id="booking-heading">Book your moment of calm.</h2>
       <p>Choose a service below. Square will open in a new tab so you can select your appointment time and complete your booking.</p>
-      <div id="square-booking-embed" aria-label="Square appointment scheduler">
+      <p class="client-policy booking-client-policy" id="square-client-policy"><strong>Before booking:</strong> Male clients are not accepted.</p>
+      <div id="square-booking-embed" aria-describedby="square-client-policy" aria-label="Square appointment scheduler">
         <!-- Start Square Appointments Embed Code --><script src="https://square.site/appointments/buyer/widget/6e670549-6f6f-49bc-888b-1a1ad1e70f50/758877AK4GKV1.js"></script><!-- End Square Appointments Embed Code -->
       </div>
       <script>
