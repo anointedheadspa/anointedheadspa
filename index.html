@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anointed Headspa | Luxury Scalp &amp; Relaxation Experience" />
+  <meta property="og:description" content="Explore Anointed Headspa services, pricing, and book your appointment with Maci." />
+  <meta property="og:url" content="https://anointedheadspa.com/" />
+  <meta property="og:image" content="https://anointedheadspa.com/anointed-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Anointed Headspa logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anointed Headspa" />
+  <meta name="twitter:image" content="https://anointedheadspa.com/anointed-social.jpg" />
+  <meta name="twitter:image:alt" content="Anointed Headspa logo" />
+
   <title>Anointed Headspa | Luxury Scalp & Relaxation Experience</title>
 
   <meta
@@ -634,6 +649,17 @@ a:focus-visible{outline:3px solid #b5799e;outline-offset:6px}
 section{scroll-margin-top:140px}
 @media(max-width:900px){section{scroll-margin-top:185px}.booking-policy-header{text-align:left;padding-bottom:12px}}
 @media(max-width:600px){section{scroll-margin-top:190px}.booking-policy-header{font-size:.74rem}.booking-section .booking-client-policy{padding:0 10px}}
+</style><style>
+/* The supplied logo, with light surfaces to preserve its original colors. */
+.brand-logo{display:block;flex-shrink:0;line-height:1}
+header .brand-logo img{width:270px;height:auto}
+.hero h1.hero-logo{font-size:inherit;line-height:1;background:transparent;border:0;border-radius:0;padding:0;margin:0 0 28px;max-width:560px}
+.hero-logo img{width:100%;height:auto}
+footer .footer-logo{background:#fcf7ef;border-radius:4px;padding:14px 18px;margin-bottom:0}
+.footer-logo img{width:220px}
+html body section{scroll-margin-top:calc(var(--site-header-height,165px) + 16px)}
+@media(max-width:900px){nav{justify-content:space-between}header .brand-logo img{width:240px}}
+@media(max-width:600px){nav{padding:14px 0;gap:12px}header .brand-logo img{width:210px}.hero h1.hero-logo{padding:0;margin-bottom:22px}.footer-logo img{width:210px}}
 </style></head>
 
 <body><a class="skip-link" href="#home">Skip to content</a>
@@ -642,9 +668,7 @@ section{scroll-margin-top:140px}
   <header>
     <div class="container">
       <nav>
-        <a href="#home" class="brand">
-          Anointed <span>Headspa</span>
-        </a>
+        <a href="#home" class="brand brand-logo" aria-label="Anointed Headspa home"><img src="anointed-logo-small.png" srcset="anointed-logo-small.png 500w, anointed-logo.png 1000w" sizes="(max-width: 600px) 210px, 270px" width="500" height="230" alt="Anointed Headspa" decoding="async" /></a>
 
         <div class="nav-links">
           <a href="#about">About</a>
@@ -668,9 +692,7 @@ section{scroll-margin-top:140px}
           Rest • Restore • Renew
         </div>
 
-        <h1>
-          Anointed <span>Headspa</span>
-        </h1>
+        <h1 class="hero-logo"><img src="anointed-logo.png" width="1000" height="460" alt="Anointed Headspa" fetchpriority="high" decoding="async" /></h1>
 
         <p>
           A luxurious head spa experience designed to nourish the scalp,
@@ -939,9 +961,7 @@ section{scroll-margin-top:140px}
   <footer>
     <div class="container">
 
-      <div class="brand">
-        Anointed <span>Headspa</span>
-      </div>
+      <a href="#home" class="brand brand-logo footer-logo" aria-label="Anointed Headspa home"><img src="anointed-logo-small.png" width="500" height="230" alt="Anointed Headspa" loading="lazy" decoding="async" /></a>
 
       <p>
         © 2026 Anointed Headspa. All rights reserved.
@@ -950,5 +970,13 @@ section{scroll-margin-top:140px}
     </div>
   </footer>
 
+<script>
+    (() => {
+      const header = document.querySelector('header');
+      const updateHeaderHeight = () => document.documentElement.style.setProperty('--site-header-height', Math.ceil(header.getBoundingClientRect().height) + 'px');
+      updateHeaderHeight();
+      new ResizeObserver(updateHeaderHeight).observe(header);
+    })();
+  </script>
 </body>
 </html>
