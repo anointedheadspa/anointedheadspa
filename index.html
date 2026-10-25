@@ -676,6 +676,28 @@ header .booking-policy-header{margin:0;padding:0;text-align:center;color:#674b61
 @media(max-width:900px){header .header-controls{display:contents}header .nav-links{min-height:0}header nav{grid-template-columns:1fr auto;gap:0 24px;padding:12px 0 5px}header .brand-logo{grid-column:1;grid-row:1}header .nav-links{grid-column:1/-1;grid-row:2;justify-content:center;gap:38px;margin-top:4px}.header-booking{grid-column:2;grid-row:1;border-left:0;padding-left:0}header .nav-links a{font-size:.76rem}}
 @media(max-width:600px){header .container{width:92%}header nav{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;padding:10px 0 2px}header .brand-logo img{width:min(210px,100%)}header .nav-links{justify-content:space-between;gap:10px;margin-top:5px}header .nav-links a{min-height:42px;font-size:.71rem;letter-spacing:.04em}header .nav-book{gap:10px;padding:11px 10px;min-height:44px;font-size:.7rem}.header-booking{gap:7px}header .booking-policy-header{font-size:.65rem;line-height:1.4}}
 @media(max-width:420px){header .nav-book span{display:none}header nav{column-gap:12px}}
+</style><style>
+/* Compact service cards with consistent price and booking rows. */
+.services .service-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border:0;align-items:stretch;margin-top:26px}
+.services .service-card{display:flex;flex-direction:column;align-items:stretch;padding:30px;border:1px solid #d8c4cf;border-radius:12px;background:#fcf7ef;box-shadow:0 6px 20px #39214405;overflow:hidden}
+.services .service-card:last-child{border:1px solid #d8c4cf}
+.services .service-card:hover{background:#fcf7ef;box-shadow:0 8px 24px #3921440a;transform:none}
+.service-heading{display:flex;justify-content:space-between;align-items:center;gap:18px}
+.services .service-card h3{min-height:0;margin:0;font-weight:400;line-height:1.15}
+.service-prefix{display:block;margin-bottom:8px;font:400 .66rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8b486c}
+.service-name{display:block;font-size:clamp(1.8rem,2.3vw,2.1rem);letter-spacing:-.025em;color:#392342}
+.services .service-icon{flex:0 0 40px;width:40px;height:40px;margin:0;display:grid;place-items:center;border:1px solid #cbb385;border-radius:50%;font-size:1.3rem;line-height:1;background:#f5eaf0;color:#714873}
+.service-details{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin:28px 0 24px}
+.services .service-price{display:flex;align-items:baseline;gap:2px;margin:0;font:400 3rem/1 Georgia,serif;letter-spacing:-.04em;color:#392342}
+.price-currency{font-size:1.5rem;letter-spacing:0}
+.services .service-duration{margin:0;padding:9px 13px;border:1px solid #d4b4c7;border-radius:999px;background:#ead2e0;color:#392144;font:600 .94rem/1.4 Arial,Helvetica,sans-serif;white-space:nowrap}
+.service-booking{margin-top:auto;padding-top:20px;border-top:1px solid #e4d7dc}
+.services .service-card .client-policy{margin:0 0 12px;color:#674b61;font:400 .72rem/1.5 Arial,Helvetica,sans-serif}
+.services .price-book{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;width:100%;margin:0;padding:13px 16px;border-radius:5px;font:500 .76rem/1.5 Arial,Helvetica,sans-serif;letter-spacing:0}
+.services .price-book span{font-size:1rem}
+@media(max-width:1100px){.services .service-grid{gap:16px}.services .service-card{padding:24px}.service-heading{gap:10px}.services .service-duration{font-size:.88rem;padding:8px 11px}}
+@media(max-width:900px){.services .service-grid{grid-template-columns:1fr;max-width:540px;margin:26px auto 0;gap:18px}.services .service-card{padding:28px}.service-name{font-size:2.1rem}.service-details{margin:24px 0}.services .service-duration{font-size:.94rem;padding:9px 13px}}
+@media(max-width:600px){.services .service-card{padding:24px}.services .service-grid{gap:18px}.service-name{font-size:2rem}.services .service-price{font-size:2.8rem}}
 </style></head>
 
 <body><a class="skip-link" href="#home">Skip to content</a>
@@ -762,28 +784,46 @@ header .booking-policy-header{margin:0;padding:0;text-align:center;color:#674b61
       </div>
       <div class="service-grid">
         <article class="service-card">
-          <div class="service-icon" aria-hidden="true">✦</div>
-          <h3>Anointed Peace</h3>
-          <p class="service-duration">1 hour</p>
-          <p class="service-price">$75</p>
-          <p class="client-policy" id="peace-policy">Male clients are not accepted.</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/UD3CSVYJQ2IFST6KHC34TMRA" target="_blank" rel="noopener noreferrer" aria-describedby="peace-policy">Book Anointed Peace <span aria-hidden="true">↗</span></a>
+          <div class="service-heading">
+            <h3><span class="service-prefix">Anointed</span> <span class="service-name">Peace</span></h3>
+            <div class="service-icon" aria-hidden="true">✦</div>
+          </div>
+          <div class="service-details">
+            <p class="service-price" aria-label="$75"><span class="price-currency" aria-hidden="true">$</span><span aria-hidden="true">75</span></p>
+            <p class="service-duration">60 minutes</p>
+          </div>
+          <div class="service-booking">
+            <p class="client-policy" id="peace-policy">Male clients are not accepted.</p>
+            <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/UD3CSVYJQ2IFST6KHC34TMRA" target="_blank" rel="noopener noreferrer" aria-describedby="peace-policy">Book Anointed Peace <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
         <article class="service-card">
-          <div class="service-icon" aria-hidden="true">☾</div>
-          <h3>Anointed Renewal</h3>
-          <p class="service-duration">90 minutes</p>
-          <p class="service-price">$100</p>
-          <p class="client-policy" id="renewal-policy">Male clients are not accepted.</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/PTZFJO7PYRCVRXCWOKRRYM5P" target="_blank" rel="noopener noreferrer" aria-describedby="renewal-policy">Book Anointed Renewal <span aria-hidden="true">↗</span></a>
+          <div class="service-heading">
+            <h3><span class="service-prefix">Anointed</span> <span class="service-name">Renewal</span></h3>
+            <div class="service-icon" aria-hidden="true">☾</div>
+          </div>
+          <div class="service-details">
+            <p class="service-price" aria-label="$100"><span class="price-currency" aria-hidden="true">$</span><span aria-hidden="true">100</span></p>
+            <p class="service-duration">90 minutes</p>
+          </div>
+          <div class="service-booking">
+            <p class="client-policy" id="renewal-policy">Male clients are not accepted.</p>
+            <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/PTZFJO7PYRCVRXCWOKRRYM5P" target="_blank" rel="noopener noreferrer" aria-describedby="renewal-policy">Book Anointed Renewal <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
         <article class="service-card">
-          <div class="service-icon" aria-hidden="true">✿</div>
-          <h3>Anointed Sanctuary</h3>
-          <p class="service-duration">2 hours</p>
-          <p class="service-price">$135</p>
-          <p class="client-policy" id="sanctuary-policy">Male clients are not accepted.</p>
-          <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/GMDSXPBJDMWSCCEOOSRZSFOA" target="_blank" rel="noopener noreferrer" aria-describedby="sanctuary-policy">Book Anointed Sanctuary <span aria-hidden="true">↗</span></a>
+          <div class="service-heading">
+            <h3><span class="service-prefix">Anointed</span> <span class="service-name">Sanctuary</span></h3>
+            <div class="service-icon" aria-hidden="true">✿</div>
+          </div>
+          <div class="service-details">
+            <p class="service-price" aria-label="$135"><span class="price-currency" aria-hidden="true">$</span><span aria-hidden="true">135</span></p>
+            <p class="service-duration">120 minutes</p>
+          </div>
+          <div class="service-booking">
+            <p class="client-policy" id="sanctuary-policy">Male clients are not accepted.</p>
+            <a class="button price-book" href="https://book.squareup.com/appointments/6e670549-6f6f-49bc-888b-1a1ad1e70f50/location/758877AK4GKV1/services/GMDSXPBJDMWSCCEOOSRZSFOA" target="_blank" rel="noopener noreferrer" aria-describedby="sanctuary-policy">Book Anointed Sanctuary <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
       </div>
     </div>
